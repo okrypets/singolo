@@ -73,18 +73,22 @@ nav ul {
     color: #ffffff;
 }
 
-.header a.logo {
+.logo__block {
     grid-column: span 2;
+}
+
+.header a.logo {   
+    display: flex;  
     align-self: end;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 25px;
     line-height: 1;    
-    letter-spacing: -0.7px;    
+    letter-spacing: -0.7px;       
 }
 
-.header a.logo em {    
-    margin-left: -4px;
+.header a.logo:after {    
+    content:'*';
     color: #f06c64;
 }
 
@@ -222,6 +226,7 @@ a.arrow-next {
 
 .services__content .layout-3-column {
     grid-template-columns: repeat(3, 3fr);
+    grid-template-rows: 1fr 1fr;
     display: grid;
     grid-gap: 20px;
     padding: 25px 0;
@@ -242,8 +247,9 @@ a.arrow-next {
 }
 
 .services .service__description{    
-    height: 103px;
+    height: 100px;
     overflow: hidden;
+    margin-bottom: 3px;
 }
 
 .icon_pen {
