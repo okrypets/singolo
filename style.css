@@ -591,10 +591,7 @@ nav ul {
 }
 
 form input,
-form textarea {   
-    min-width: 620px;
-    max-width: 620px;
-    width: 620px; 
+form textarea { 
     padding: 10px 15px;    
     line-height: 1.5;   
     font-size: 12px;
@@ -604,8 +601,14 @@ form textarea {
     border: none;
 }
 
+form textarea {   
+    min-width: 620px;
+    max-width: 620px;
+    width: 620px; 
+}
+
 form input[type=submit] {
-    padding: 5px;
+    padding: 3px 5px;
     max-width: 200px;    
     text-transform: uppercase;
     font-family: "LatoBold";
@@ -613,7 +616,13 @@ form input[type=submit] {
     background: #ffffff;
     color: #d6564f;
     cursor: pointer;
-    
+    border: 2px solid transparent;
+}
+
+form input[type=submit]:hover {
+    border: 2px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
 }
 
 form input::placeholder,
