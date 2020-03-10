@@ -544,7 +544,7 @@ nav ul {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 20px;
-    padding: 60px 0;
+    padding: 60px 0 6px;
     
 }
 
