@@ -544,8 +544,7 @@ nav ul {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 20px;
-    padding: 60px 0 6px;
-    
+    padding: 60px 0 3px;    
 }
 
 nav ul {
@@ -604,7 +603,8 @@ form textarea {
 form textarea {   
     min-width: 620px;
     max-width: 620px;
-    width: 620px; 
+    width: 620px;
+    height: 200px;
 }
 
 form input[type=submit] {
