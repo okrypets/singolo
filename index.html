@@ -19,19 +19,19 @@
         </div>
         <nav class="header__navigation">
           <ul class="navigation">
-            <li class="active">
+            <li class="header-nav-item home-link active">
               <a href="#">Home</a>
             </li>
-            <li>
+            <li class="header-nav-item services-link">
               <a href="#">Services</a>
             </li>
-            <li>
+            <li class="header-nav-item portfolio-link">
               <a href="#">Portfolio</a>
             </li>
-            <li>
+            <li class="header-nav-item about-link">
               <a href="#">About</a>
             </li>
-            <li>
+            <li class="header-nav-item contact-link">
               <a href="#">Contact</a>
             </li>
           </ul>
@@ -43,20 +43,33 @@
     <section class="slider">
       <div class="wrapper">
         <div class="slider__content">
-          <div class="slide__iphone">
-            <div class="iphone iphone__horizontal">
-              <img src="./assets/img/iphone-container.png" alt="" class="iphone_container">
-              <img src="./assets/img/shadow.png" alt="" class="shadow">
-              <img src="./assets/img/screen1.jpg" alt="" class="screen">
+          <div class="slides">
+            <div class="slide slide__iphone active">
+              <div class="iphone iphone__horizontal">
+                <div class="iphone_button"></div>
+                <div class="iphone_screen"></div>
+                <img src="./assets/img/iphone-container.png" alt="" class="iphone_container">
+                <img src="./assets/img/shadow.png" alt="" class="shadow">
+                <img src="./assets/img/screen1.jpg" alt="" class="screen">
+              </div>
+              <div class="iphone iphone__vertical">
+                <div class="iphone_button"></div>
+                <div class="iphone_screen"></div>
+                <img src="./assets/img/iphone-container.png" alt="" class="iphone_container">
+                <img src="./assets/img/shadow.png" alt="" class="shadow">
+                <img src="./assets/img/screen2.jpg" alt="" class="screen">
+              </div>
             </div>
-            <div class="iphone iphone__vertical">
-              <img src="./assets/img/iphone-container.png" alt="" class="iphone_container">
-              <img src="./assets/img/shadow.png" alt="" class="shadow">
-              <img src="./assets/img/screen2.jpg" alt="" class="screen">
+            <div class="slide slide__iphone2">
+              <img src="./assets/img/Slide-2.jpg" alt="" class="slide2">
             </div>
           </div>
-          <a href="#" class="arrow arrow-prev"></a>
-          <a href="#" class="arrow arrow-next"></a>
+          <div class="control prev">
+            <a href="#" class="arrow arrow-prev"></a>
+          </div>
+          <div class="control next">
+            <a href="#" class="arrow arrow-next"></a>
+          </div>
         </div>
       </div>
     </section>
@@ -131,16 +144,16 @@
             <div class="portfolio_description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</div>
             <nav class="portfolio__navigation">
               <ul class="navigation">
-                <li class="active">
+                <li class="portfolio-nav-item all active">
                   <a href="#">All</a>
                 </li>
-                <li>
+                <li class="portfolio-nav-item web">
                   <a href="#">Web Design</a>
                 </li>
-                <li>
+                <li class="portfolio-nav-item grafic">
                   <a href="#">Graphic Design</a>
                 </li>
-                <li>
+                <li class="portfolio-nav-item artwork">
                   <a href="#">Artwork</a>
                 </li>
               </ul>
@@ -181,9 +194,6 @@
               </picture>
               <picture class="portfolio__item">
                 <img src="./assets/img/portfolio/item_12.jpg" alt="" class="portfolio_img door">       
-              </picture>
-              <picture class="portfolio__item">
-                <img src="./assets/img/portfolio/item_13.png" alt="" class="portfolio_img">       
               </picture>
             </div>
           </div>
@@ -280,10 +290,10 @@
           <h2>Get a Quote</h2>          
           <div class="quote_description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</div>          
           <div class="quote__form">
-            <form action="#">
+            <form action="#" onsubmit="submit">
               <input type="text" placeholder="Name (Required)" required/>
               <input type="email" placeholder="Email (Required)" required/>
-              <input type="text" placeholder="Subject"/>
+              <input type="text" placeholder="Subject" value="" />
               <textarea name="" id="" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
               <input type="submit" value="Send" />
             </form>
@@ -331,3 +341,5 @@
     </div>
   </footer>
 </body>
+<script src="script.js"></script>
+</html>
