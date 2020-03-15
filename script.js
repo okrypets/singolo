@@ -135,13 +135,17 @@ const nextSlide = (n) => {
     showSlide("from-right");
 }
 
-document.querySelector(".control.prev").addEventListener("click", () => {
-    if (isEnabled) {
+document.querySelector(".control.prev").addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    if (isEnabled) {        
         previousSlide(currentSlide)
     }
 });
 
-document.querySelector(".control.next").addEventListener("click", () => {
+document.querySelector(".control.next").addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     if (isEnabled) {
         nextSlide(currentSlide)
     }
