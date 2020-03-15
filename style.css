@@ -435,9 +435,13 @@ nav ul {
 .portfolio__content .layout-4-column {    
     grid-column: span 12;
     grid-template-rows: repeat(3, 1fr);
-    height: 610px;
-    padding: 0;
-    
+    height: 615px;    
+    padding: 5px;
+    margin-bottom: -5px;
+    transform: translate(-5px, -5px);
+    width: calc(100% + 10px);
+    grid-gap: 20px;
+    overflow-y: hidden;
 }
 
 .portfolio_description {
