@@ -184,9 +184,8 @@ nav.header__navigation ul li a:hover {
     cursor: pointer;
 }
 
-.iphone.sceen-off .iphone_screen {
-    opacity: 1;
-    visibility: visible;
+.iphone.sceen-off .screen {
+    z-index: 3;
 }
 
 .iphone .iphone_button {
@@ -198,16 +197,15 @@ nav.header__navigation ul li a:hover {
     height: 42px;
     border-radius: 50%;    
 }
-.iphone .iphone_screen {
+.iphone:before {
     content: '';
     position: absolute;     
     z-index: 6;
     top: 11px;
     left: 57px;
     width: 339px;
-    height: 194px;   
-    visibility: hidden;
-    opacity: 0;
+    height: 194px;
+    opacity: 1;
     background: #333;
 }
 
@@ -225,7 +223,7 @@ nav.header__navigation ul li a:hover {
 }
 
 .iphone img.screen {
-    z-index: 3;    
+    z-index: 7;    
     top: 11px;
     left: 57px;
     border: 3px solid #c6c6c6;
@@ -280,6 +278,10 @@ nav.header__navigation ul li a:hover {
     to {
         left: 0;
     }
+}
+
+@keyframes scroll {
+    
 }
 
 .control {

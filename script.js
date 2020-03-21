@@ -8,8 +8,7 @@ const HEADERHEIGHT = document.querySelector("body > header").offsetHeight
 const headerNavigationClick = (event) => {
     const { classList } = event.target.parentNode
 
-    event.preventDefault(); 
-    event.stopPropagation();
+    event.preventDefault();
 
     document.querySelectorAll("body > header > div > div > nav > ul > li").forEach(it => {
         it.classList.contains("active") ? 
@@ -20,34 +19,46 @@ const headerNavigationClick = (event) => {
     event.target.parentNode.classList.add("active")
 
     if (classList[1] === "services-link") {
-        console.log(classList[1])
-        console.log(SERVICESTOP)
-        window.scrollTo(0, SERVICESTOP - HEADERHEIGHT);
+        let top = SERVICESTOP - HEADERHEIGHT;
+        window.scroll({
+            top: top,
+            behavior: 'smooth'
+        });
 
     }
     else if (classList[1] === "portfolio-link") {
-        console.log(classList[1])
-        window.scrollTo(0, PORTFOLIOTOP - HEADERHEIGHT);
+        let top = PORTFOLIOTOP - HEADERHEIGHT;
+        window.scroll({
+            top: top,
+            behavior: 'smooth'
+        });
     }
     else if (classList[1] === "about-link") {
-        console.log(classList[1])
-        window.scrollTo(0, ABOUTTOP - HEADERHEIGHT);
+        let top = ABOUTTOP - HEADERHEIGHT;
+        window.scroll({
+            top: top,
+            behavior: 'smooth'
+        });
     }
     else if (classList[1] === "contact-link") {
-        console.log(classList[1])
-        window.scrollTo(0, CONTACTTOP - HEADERHEIGHT);
+        let top = CONTACTTOP - HEADERHEIGHT;
+        window.scroll({
+            top: top,
+            behavior: 'smooth'
+        });
     }
     else if (classList[1] === "home-link") {
-        console.log(classList[1])
-        document.querySelector("body").scrollIntoView();
+        document.querySelector("body").scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
     }
 }
 
 const portfolioNavigationClick = (event) => {
     const { classList } = event.target.parentNode
 
-    event.preventDefault(); 
-    event.stopPropagation();
+    event.preventDefault();
 
     document.querySelectorAll("section.portfolio > div > div > nav > ul > li").forEach(it => {
         it.classList.contains("active") ? 
@@ -77,7 +88,6 @@ event.target.closest("picture").classList.add("with-border")
 const intaractiveSlider = (event) => {
     let iphoneScreenElement = '<div class="iphone_screen"></div>';
 
-    console.log(event.target)
     if (
         event.target.classList.contains("iphone_button") 
         || event.target.classList.contains("screen") 
@@ -157,7 +167,7 @@ const getSubjectElement = () => {
     let subjectValue = document.querySelector("section.quote form > input[type=text][placeholder='Subject']").value;
     let subjectElement = subjectValue.length > 0 ? 
     `<div class="subject-value"><strong>Тема:</strong>${subjectValue}</div>`
-    : `<div class="subject-value">Без темы</div>`
+    : `<div class="subject-value">Без темы</div>`;    
     return subjectElement;
 }
 
@@ -179,13 +189,19 @@ const sendOkPopUp = (event) => {
 
     document.querySelector(".popup .modal").insertAdjacentHTML("beforeend", okButton);
 
-    document.querySelector(".modal input[type=button]").addEventListener("click", () => {
+    document.querySelector(".modal input[type=button]").addEventListener("click", () => {        
         document.querySelector("body .popup").remove();
+        reset();     
     });
 }
 
-const submit = () => {
-    console.log(`OK`)
+const reset = () => {
+    document.querySelectorAll("body > main > section.quote > div > div > div.quote__form > form > input").forEach( it => {
+        it.type !== "submit" ? 
+                it.value = ""
+                : it
+    });
+    document.querySelector("body > main > section.quote > div > div > div.quote__form > form > textarea").value = "";
 }
 
 document.querySelector("section.quote form").addEventListener("submit", sendOkPopUp);
