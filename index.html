@@ -36,6 +36,7 @@
             </li>
           </ul>
         </nav>
+        <div class="mobile-menu-icon"></div>
       </div>      
     </div>    
   </header>
@@ -45,20 +46,22 @@
         <div class="slider__content">
           <div class="slides">
             <div class="slide slide__iphone active">
-              <div class="iphone iphone__horizontal">
-                <div class="iphone_button"></div>
-                <div class="iphone_screen"></div>
-                <img src="./assets/img/iphone-container.png" alt="" class="iphone_container">
-                <img src="./assets/img/shadow.png" alt="" class="shadow">
-                <img src="./assets/img/screen1.jpg" alt="" class="screen">
-              </div>
               <div class="iphone iphone__vertical">
-                <div class="iphone_button"></div>
-                <div class="iphone_screen"></div>
-                <img src="./assets/img/iphone-container.png" alt="" class="iphone_container">
-                <img src="./assets/img/shadow.png" alt="" class="shadow">
-                <img src="./assets/img/screen2.jpg" alt="" class="screen">
+                <div class="iphone_container">
+                  <div class="iphone_button"></div>
+                  <img src="./assets/img/iphone-container.png" alt="" class="phone">
+                  <img src="./assets/img/shadow.png" alt="" class="shadow">
+                  <img src="./assets/img/screen2.jpg" alt="" class="screen">
+                </div>                
               </div>
+              <div class="iphone iphone__horizontal">
+                <div class="iphone_container">
+                  <div class="iphone_button"></div>
+                  <img src="./assets/img/iphone-container.png" alt="" class="phone">
+                  <img src="./assets/img/shadow.png" alt="" class="shadow">
+                  <img src="./assets/img/screen1.jpg" alt="" class="screen">
+                </div>                
+              </div>              
             </div>
             <div class="slide slide__iphone2">
               <img src="./assets/img/Slide-2.jpg" alt="" class="slide2">
@@ -294,7 +297,7 @@
               <input type="text" placeholder="Name (Required)" required/>
               <input type="email" placeholder="Email (Required)" required/>
               <input type="text" placeholder="Subject" value="" />
-              <textarea name="" id="" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
+              <textarea name="" id="" rows="7" placeholder="Describe your project in detail..."></textarea>
               <input type="submit" value="Send" />
             </form>
             <div class="contact__info">

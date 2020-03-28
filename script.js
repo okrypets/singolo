@@ -91,7 +91,7 @@ const intaractiveSlider = (event) => {
     if (
         event.target.classList.contains("iphone_button") 
         || event.target.classList.contains("screen") 
-        || event.target.classList.contains("iphone_container")
+        || event.target.classList.contains("phone")
         || event.target.classList.contains("iphone_screen")
     ) {
         event.target.parentNode.classList.toggle("sceen-off")
@@ -205,3 +205,52 @@ const reset = () => {
 }
 
 document.querySelector("section.quote form").addEventListener("submit", sendOkPopUp);
+
+let elementServices = document.querySelector("section.services div[class*=layout-]");
+let elementPortfolio = document.querySelector("section.portfolio div[class*=layout-]");
+let elementAboutus = document.querySelector("section.aboutus div[class*=layout-]");
+
+let windowInnerWidth = window.innerWidth;
+
+const changeLayout = () => {
+    if (windowInnerWidth < 1020 && windowInnerWidth >= 768) {
+        elementServices.classList = [];
+        elementServices.classList.add("layout-2-column");
+            
+        elementPortfolio.classList = [];
+        elementPortfolio.classList.add("layout-3-column");
+    }
+
+    if (windowInnerWidth >= 1020) {
+        elementServices.classList = [];
+        elementServices.classList.add("layout-3-column");
+
+        elementPortfolio.classList = [];
+        elementPortfolio.classList.add("layout-4-column");
+    }
+
+    if (windowInnerWidth < 768 ) {
+
+        elementServices.classList = [];
+        elementServices.classList.add("layout-1-column");
+        
+        elementPortfolio.classList = [];
+        elementPortfolio.classList.add("layout-2-column");
+
+        elementAboutus.classList = [];
+        elementAboutus.classList.add("layout-1-column");
+
+       
+    }
+}
+
+const windowResize = () => { 
+    
+}
+
+changeLayout()
+window.addEventListener("resize", changeLayout);
+
+
+
+
