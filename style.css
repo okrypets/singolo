@@ -1268,4 +1268,9 @@ footer {
     .aboutus__content {
         padding: 35px 0 60px;
     }
+
+    .aboutus__content .aboutus_description{
+        line-height: 1.65;
+        letter-spacing: 0;
+    }
 }
