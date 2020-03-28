@@ -83,8 +83,7 @@ nav ul {
 }
 
 .header__content .mobile-menu-icon {
-    display: none;
-    /* position: absolute; */
+    display: block;
     width: 2em;
     height: 2em;
     grid-column: 1;
@@ -1160,13 +1159,43 @@ footer {
         grid-template-areas: "nav logo";
     }
 
+    .header__content.show-menu nav.header__navigation {
+        display: grid;
+    }
+
     nav.header__navigation {
         display: none;
+        /* display: grid; */
         position: fixed;
-        width: 90%;
         height: 100vh;
         left: 0;
         top: 0;
+        width: 278px;
+        background: #2D303A;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    nav.header__navigation  {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    nav.header__navigation ul li:before {
+        display: none;
+    }
+
+    nav.header__navigation ul li a {
+        font-size: 24px;
+        letter-spacing: -1px;
+        line-height: 56px;
+    }
+
+    nav.header__navigation ul {
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 25vh;
+        margin-left: 40px;
     }
 
     .logo__block {
@@ -1175,8 +1204,15 @@ footer {
         align-self: flex-end;
     }
 
-    .header__content .mobile-menu-icon {
-        display: block;
+    .header__content.show-menu .mobile-menu-icon {
+        z-index: 2;
+        transform: rotate(90deg);
+    }
+
+    .header__content.show-menu .logo__block {
+        z-index: 2;
+    justify-self: flex-start;
+    margin-left: 10px;
     }
 
     .header a.logo {
@@ -1259,18 +1295,77 @@ footer {
 
     .aboutus__content .layout-1-column {
         grid-column: span 12;
+        grid-row-gap: 25px;
     }
 
     .quote__form {
         grid-template-columns: 1fr;
+        margin: 0;
+        grid-row-gap: 33px;
     }
 
     .aboutus__content {
-        padding: 35px 0 60px;
+        padding: 35px 0 25px;
     }
 
     .aboutus__content .aboutus_description{
         line-height: 1.65;
         letter-spacing: 0;
+    }
+
+    .aboutus__content .person {
+        grid-gap: 20px;
+    }
+
+    .social__navigation {
+        margin-top: -8px;
+    }
+
+    .quote__content {
+        padding: 45px 0 30px;
+    }
+
+    .quote__content .quote_description {
+        line-height: 1.7;
+        letter-spacing: 0;
+    }
+
+    form input[type=submit] {
+        margin-top: 0;
+        line-height: 50px;
+        max-width: 100%;
+        height: 50px;
+    }
+
+    form input, form textarea {
+        line-height: 15px;
+    }
+
+    .quote__form form {
+        grid-gap: 15px;
+    }
+
+    form textarea {
+        height: 13em;
+    }
+
+    .contact__info ul li {
+        line-height: 2.1;
+    }
+
+    .contact__info ul li:before {
+        padding-right: 0.6em;
+    }
+
+    .footer__content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__content .copyright {
+        display: none;
+    }
+
+    .social {
+        justify-self: center;
     }
 }

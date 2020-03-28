@@ -2,12 +2,17 @@ const SERVICESTOP = document.querySelector("body > main > section.services > div
 const PORTFOLIOTOP = document.querySelector("body > main > section.portfolio > div > div").offsetTop
 const ABOUTTOP = document.querySelector("body > main > section.aboutus > div > div").offsetTop
 const CONTACTTOP = document.querySelector("body > main > section.quote > div > div").offsetTop
-
 const HEADERHEIGHT = document.querySelector("body > header").offsetHeight
 
 const headerNavigationClick = (event) => {
-    const { classList } = event.target.parentNode
+    const { classList } = event.target.parentNode;
 
+    const headerContentElement = document.querySelector("header div.header__content");
+
+    if (headerContentElement.classList.contains("show-menu")) {
+        headerContentElement.classList.remove("show-menu");
+    }
+    
     event.preventDefault();
 
     document.querySelectorAll("body > header > div > div > nav > ul > li").forEach(it => {
@@ -206,6 +211,13 @@ const reset = () => {
 
 document.querySelector("section.quote form").addEventListener("submit", sendOkPopUp);
 
+toogleShow = (event) => {
+    const { classList } = event.target.parentNode;
+    classList.toggle("show-menu");
+}
+
+document.querySelector("header div.mobile-menu-icon").addEventListener("click", toogleShow);
+
 let elementServices = document.querySelector("section.services div[class*=layout-]");
 let elementPortfolio = document.querySelector("section.portfolio div[class*=layout-]");
 let elementAboutus = document.querySelector("section.aboutus div[class*=layout-]");
@@ -242,10 +254,6 @@ const changeLayout = () => {
 
        
     }
-}
-
-const windowResize = () => { 
-    
 }
 
 changeLayout()
