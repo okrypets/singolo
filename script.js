@@ -61,8 +61,7 @@ const headerNavigationClick = (event) => {
 }
 
 const portfolioNavigationClick = (event) => {
-    const { classList } = event.target.parentNode
-
+    
     event.preventDefault();
 
     document.querySelectorAll("section.portfolio > div > div > nav > ul > li").forEach(it => {
@@ -76,7 +75,7 @@ const portfolioNavigationClick = (event) => {
     let element = document.querySelectorAll("section.portfolio picture")[0]
     let elementHTML = document.querySelectorAll("section.portfolio picture")[0].outerHTML
 
-    document.querySelector("section.portfolio div.layout-4-column").insertAdjacentHTML("beforeend", elementHTML)
+    document.querySelector("section.portfolio div.layout-column").insertAdjacentHTML("beforeend", elementHTML)
     element.remove()
 }
 
@@ -91,8 +90,6 @@ event.target.closest("picture").classList.add("with-border")
 }
 
 const intaractiveSlider = (event) => {
-    let iphoneScreenElement = '<div class="iphone_screen"></div>';
-
     if (
         event.target.classList.contains("iphone_button") 
         || event.target.classList.contains("screen") 
@@ -108,7 +105,7 @@ document.querySelector("header nav > ul").addEventListener("click", headerNaviga
 
 document.querySelector("section.portfolio nav > ul").addEventListener("click", portfolioNavigationClick);
 
-document.querySelector("section.portfolio div.layout-4-column").addEventListener("click", setBorder);
+document.querySelector("section.portfolio div.layout-column").addEventListener("click", setBorder);
 
 document.querySelector("section.slider div.slide__iphone").addEventListener("click", intaractiveSlider);
 
@@ -217,48 +214,3 @@ toogleShow = (event) => {
 }
 
 document.querySelector("header div.mobile-menu-icon").addEventListener("click", toogleShow);
-
-let elementServices = document.querySelector("section.services div[class*=layout-]");
-let elementPortfolio = document.querySelector("section.portfolio div[class*=layout-]");
-let elementAboutus = document.querySelector("section.aboutus div[class*=layout-]");
-
-let windowInnerWidth = window.innerWidth;
-
-const changeLayout = () => {
-    if (windowInnerWidth < 1020 && windowInnerWidth >= 768) {
-        elementServices.classList = [];
-        elementServices.classList.add("layout-2-column");
-            
-        elementPortfolio.classList = [];
-        elementPortfolio.classList.add("layout-3-column");
-    }
-
-    if (windowInnerWidth >= 1020) {
-        elementServices.classList = [];
-        elementServices.classList.add("layout-3-column");
-
-        elementPortfolio.classList = [];
-        elementPortfolio.classList.add("layout-4-column");
-    }
-
-    if (windowInnerWidth < 768 ) {
-
-        elementServices.classList = [];
-        elementServices.classList.add("layout-1-column");
-        
-        elementPortfolio.classList = [];
-        elementPortfolio.classList.add("layout-2-column");
-
-        elementAboutus.classList = [];
-        elementAboutus.classList.add("layout-1-column");
-
-       
-    }
-}
-
-changeLayout()
-window.addEventListener("resize", changeLayout);
-
-
-
-

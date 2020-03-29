@@ -83,7 +83,7 @@ nav ul {
 }
 
 .header__content .mobile-menu-icon {
-    display: block;
+    display: none;
     width: 2em;
     height: 2em;
     grid-column: 1;
@@ -307,10 +307,6 @@ nav.header__navigation ul li a:hover {
     left: 20px;
 }
 
-.iphone__vertical img.shadow {
-    
-}
-
 .to-left {
     animation-name: left;
 }
@@ -396,34 +392,22 @@ a.arrow-next {
     text-align: justify;
 }
 
-.services__content .layout-3-column {
+.services__content .layout-column {
     grid-template-columns: repeat(3, 3fr);
     grid-template-rows: 1fr 1fr;
     display: grid;
     grid-gap: 20px;
     grid-row-gap: 26px;
-    /* padding: 25px 0; */
-}
-
-.services__content .layout-2-column {
-    grid-template-rows: 1fr 1fr 1fr;
-    display: grid;
-    grid-gap: 18px;
-    grid-row-gap: 45px;
-    padding: 18px 0;
-}
-
-.services__content .layout-2-column .service{
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-gap: 20px;
-    max-width: 90%;
 }
 
 .service {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 62px auto;
     grid-gap: 20px;
+}
+
+.service .service__icon {
+    justify-self: end;
 }
 
 .service .service__icon span.icon {
@@ -510,39 +494,18 @@ nav ul {
     line-height: 1.3;
 }
 
-.portfolio__content .layout-4-column {    
-    grid-column: span 12;
-    grid-template-rows: repeat(3, 1fr);
-    height: 615px;
-    padding: 5px;
-    margin-bottom: -6px;
-    transform: translate(-5px, -5px);
-    width: calc(100% + 10px);
+.portfolio__content .layout-column {
+    grid-template-columns: repeat(4, 3fr);
+    display: grid;
     grid-gap: 20px;
-    overflow-y: hidden;
-    grid-row-gap: 16px;
-}
-
-.portfolio__content .layout-3-column {    
+    padding: 0 0 5px;
     grid-column: span 12;
-    grid-template-rows: repeat(4, 1fr);
-    height: 806px;
-    padding: 5px;
-    transform: translate(-5px, -5px);
-    width: calc(100% + 10px);
-    grid-gap: 20px;
-    overflow-y: hidden;
-    margin: 20px 0px;
-}
+} 
 
 .portfolio_description {
     font-size: 18px;
     font-family: "LatoLight";
     letter-spacing: -0.2px;
-}
-
-.portfolio__navigation {
-    /* margin-top: -5px; */
 }
 
 .portfolio__navigation ul {
@@ -663,7 +626,9 @@ picture.with-border {
     text-align: justify;
 }
 
-.aboutus__content .layout-3-column {
+.aboutus__content .layout-column {
+    grid-template-columns: repeat(3, 3fr);
+    display: grid;
     grid-column: span 12;
     padding: 25px 0 0;
     grid-gap: 19px;
@@ -673,11 +638,9 @@ picture.with-border {
     grid-template-areas:
     "photo"
     "description";
-    /* grid-template-rows: 300px 1fr; */
     display: grid;
     grid-gap: 15px;
     overflow: hidden;
-    /* grid-template-columns: 300px; */
 }
 
 .person__photo img {
@@ -687,8 +650,6 @@ picture.with-border {
 
 .aboutus__content .person .person__photo {
     grid-area: photo;
-    /* width: 300px;
-    height: 300px; */
     overflow: hidden;
     display: grid;
 }
@@ -757,7 +718,7 @@ picture.with-border {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 20px;
-    padding: 60px 0 32px;    
+    padding: 60px 0;    
 }
 
 nav ul {
@@ -779,6 +740,7 @@ nav ul {
 
 .quote__content .quote_description {
     line-height: 1.5;
+    margin-bottom: 23px;
 }
 
 .quote__form {   
@@ -797,15 +759,16 @@ nav ul {
     text-align: justify;
 }
 
-.quote__form form {
+form {
+    grid-column: span 8;
     display: grid;
-    grid-gap: 15px;
+    grid-gap: 16px;
 }
 
 form input,
 form textarea { 
     padding: 10px 15px;    
-    line-height: 19px;   
+    line-height: 18px;   
     font-size: 12px;
     color: #ffffff;
     background: #d6564f;
@@ -815,6 +778,7 @@ form textarea {
 
 form textarea {   
     resize: vertical;
+    height: 160px;
 }
 
 form input[type=submit] {
@@ -828,6 +792,7 @@ form input[type=submit] {
     color: #886A30;
     cursor: pointer;
     border: 2px solid transparent;
+    margin-top: -3px;
 }
 
 form input[type=submit]:hover {
@@ -847,6 +812,9 @@ form textarea::placeholder {
 
 .contact__info {
     font-size: 12px;
+    display: grid;
+    grid-column: span 4;
+    align-self: flex-start;
 }
 
 h3.contact-info-title {
@@ -866,7 +834,7 @@ h3.contact-info-title {
     display: flex;
     flex-direction: column;
     list-style: none;
-    margin-top: 21px;
+    margin-top: 12px;
 }
 
 .contact__info ul li:before {
@@ -941,12 +909,10 @@ footer {
     display: grid;
     grid-gap: 18px;
     padding: 25px 0;
-    grid-column: span 12;
 }
 
 .layout-2-column {
     grid-template-columns: repeat(2, 6fr);
-    grid-column: span 12;
     display: grid;
     grid-gap: 18px;
     padding: 25px 0;
@@ -1013,6 +979,16 @@ footer {
     color: #ffffff;
 }
 
+@media only screen and (min-width: 1020px) {
+    .services__content .layout-column {
+        padding: 25px 0;
+    }
+
+    .layout-column {
+        
+    }
+}
+
 @media only screen and (max-width: 1019px){
     h2 {
         line-height: 1;
@@ -1059,6 +1035,19 @@ footer {
         padding: 40px 0;
     }
 
+    .services__content .layout-column {
+        grid-template-columns: repeat(2, 6fr);
+        grid-template-rows: 1fr 1fr 1fr;
+        display: grid;
+        grid-gap: 18px;
+        grid-row-gap: 45px;
+        padding: 18px 0;
+    }
+
+    .services__content .layout-column .service{    
+        max-width: 96%;
+    }
+
     .portfolio_description {
         letter-spacing: 0;
         line-height: 30px;
@@ -1077,11 +1066,24 @@ footer {
         padding: 60px 0 35px;
     }
 
+    .portfolio__content .layout-column {    
+        grid-column: span 12;
+        grid-template-columns: repeat(3, 3fr);
+        grid-template-rows: repeat(4, 1fr);
+        height: 806px;
+        padding: 5px;
+        transform: translate(-5px, -5px);
+        width: calc(100% + 10px);
+        grid-gap: 20px;
+        overflow-y: hidden;
+        margin: 20px 0px;
+    }
+
     .aboutus__content {
         padding: 55px 0 60px;
     }
 
-    .aboutus__content .layout-3-column {
+    .aboutus__content .layout-column {
         grid-column: span 12;
         padding: 20px 0 0;
         grid-gap: 15px;
@@ -1102,6 +1104,7 @@ footer {
 
     .quote__content .quote_description {
         line-height: 1.6;
+        margin-bottom: 5px;
     }
 
     .quote__content {
@@ -1117,9 +1120,14 @@ footer {
         grid-gap: 10px;
     }
 
+    form {
+        grid-gap: 10px;
+    }
+
     form input, form textarea {
         padding: 10px 10px;
         line-height: 20px;
+        max-width: 98%;
     }
 
     .contact__info p {
@@ -1141,9 +1149,18 @@ footer {
     }
 
 }
-@media only screen and (min-width: 375px) and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
+    .header, 
+    .services  {
+        border-bottom: 0;
+    }
+
     header .wrapper {
         padding: 0 20px;
+    }
+
+    .header__content .mobile-menu-icon {
+        display: block;
     }
 
     .wrapper {
@@ -1157,6 +1174,17 @@ footer {
 
     .header__content {
         grid-template-areas: "nav logo";
+        margin-bottom: 0;
+    }
+
+    .header__content.show-menu:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: fixed;
+        background: #2D303A;
+        opacity: 0.6;
     }
 
     .header__content.show-menu nav.header__navigation {
@@ -1165,7 +1193,6 @@ footer {
 
     nav.header__navigation {
         display: none;
-        /* display: grid; */
         position: fixed;
         height: 100vh;
         left: 0;
@@ -1218,10 +1245,11 @@ footer {
     .header a.logo {
         font-size: 20px;
         margin-left: -6px;
+        line-height: inherit;
     }
 
     .slider {
-        border-width: 2px;
+        border-bottom: 2px;
     }
 
     .control.prev {
@@ -1233,15 +1261,11 @@ footer {
     }
 
     .iphone {
-        padding: 2.1vh 0;
-    }
-
-    .iphone__vertical {
-        /* left: 8%; */
+        padding: 2.25vh 0;
     }
 
     .iphone img.shadow {
-        /* width: 22vw; */
+        width: 23.2vw;
     }
 
     .iphone img.phone {
@@ -1249,7 +1273,8 @@ footer {
     }
 
     .iphone__horizontal {
-        /* left: -12%; */
+        left: -10.5%;
+        top: -0.5%;
     }
 
     .iphone img.screen {
@@ -1257,11 +1282,11 @@ footer {
     }
 
     .services__content {
-        padding: 30px 0 5px;
+        padding: 30px 0 10px;
     }
 
     h1 {
-        line-height: 1;
+        line-height: 1.1;
     }
 
     .services__content .services_description {
@@ -1269,12 +1294,18 @@ footer {
         word-spacing: 0;
     }
 
+    .services__content .layout-column {
+        grid-template-columns: repeat(1, 12fr); 
+        padding: 5px 0px;
+        grid-row-gap: 20px;       
+    }
+
     .portfolio__item {
         height: 128px;
     }
 
     .portfolio__content {
-        padding: 45px 0 35px;
+        padding: 45px 0 25px;
     }
 
     .portfolio_description {
@@ -1285,17 +1316,20 @@ footer {
         line-height: 1.5;
     }
 
-    .portfolio__content .layout-2-column {
-        padding: 5px 0;
+    .portfolio__content .layout-column {
+        grid-template-columns: repeat(2, 6fr);
+        padding: 5px;
         grid-gap: 15px;
         grid-row-gap: 1em;
-        height: 560px;
-        overflow: hidden;
+        height: 565px;
+        margin: 5px 0;
     }
 
-    .aboutus__content .layout-1-column {
+    .aboutus__content .layout-column {
+        grid-template-columns: repeat(1, 12fr);
         grid-column: span 12;
         grid-row-gap: 25px;
+        padding: 5px 0;
     }
 
     .quote__form {
@@ -1328,6 +1362,17 @@ footer {
     .quote__content .quote_description {
         line-height: 1.7;
         letter-spacing: 0;
+        margin: 0;
+    }
+
+    form {
+        grid-column: span 12;
+        grid-gap: 15px;
+    }
+
+    .contact__info {
+        grid-column: span 12;
+        margin-top: 13px;
     }
 
     form input[type=submit] {
@@ -1339,6 +1384,7 @@ footer {
 
     form input, form textarea {
         line-height: 15px;
+        max-width: 100%;
     }
 
     .quote__form form {
